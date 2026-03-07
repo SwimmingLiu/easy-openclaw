@@ -45,6 +45,7 @@ npm config set registry https://registry.npmmirror.com
 - [Windows 安装指南](docs/install-guide/windows.md)
 - [Docker 安装指南](docs/install-guide/docker.md)
 - [常见问题排查](docs/install-guide/troubleshooting.md)
+- [系统要求](docs/install-guide/requirements.md)
 
 ## 常见问题
 

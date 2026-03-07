@@ -61,7 +61,7 @@ npm config set registry https://registry.npmmirror.com
 
 同时，你可能需要配置自定义 API 代理。详见各平台指南中的"中国大陆网络优化"章节。
 
-## 常见问题
+## 常见问题和帮助
 
 安装过程中遇到问题？查阅[常见问题排查手册](./troubleshooting.md)，涵盖：
 
@@ -71,6 +71,15 @@ npm config set registry https://registry.npmmirror.com
 - Node.js 版本不匹配
 - 权限问题（EACCES）
 - 网络连接问题
+
+## 详细系统要求
+
+查看各平台的[详细系统要求](./requirements.md)，包括：
+
+- 支持的操作系统版本和架构
+- Node.js 版本兼容性矩阵
+- Docker 版本要求
+- 网络访问域名列表
 
 ## 参考资源
 

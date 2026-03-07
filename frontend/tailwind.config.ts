@@ -1,0 +1,103 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Primary - warm orange (OpenClaw brand)
+        primary: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
+        },
+        // Neutral - cool gray
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
+        // Semantic colors
+        success: '#22c55e',
+        warning: '#eab308',
+        error: '#ef4444',
+        info: '#3b82f6',
+      },
+      fontFamily: {
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans SC"',
+          'sans-serif',
+        ],
+        mono: [
+          '"SF Mono"',
+          'Monaco',
+          '"Cascadia Code"',
+          '"Roboto Mono"',
+          'Consolas',
+          'monospace',
+        ],
+      },
+      fontSize: {
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+      },
+      spacing: {
+        '0': '0',
+        '1': '0.25rem',
+        '2': '0.5rem',
+        '3': '0.75rem',
+        '4': '1rem',
+        '5': '1.25rem',
+        '6': '1.5rem',
+        '8': '2rem',
+        '10': '2.5rem',
+        '12': '3rem',
+        '16': '4rem',
+      },
+      borderRadius: {
+        sm: '0.25rem',
+        DEFAULT: '0.375rem',
+        md: '0.5rem',
+        lg: '0.75rem',
+        xl: '1rem',
+        '2xl': '1.5rem',
+        full: '9999px',
+      },
+      boxShadow: {
+        sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
+        DEFAULT: '0 2px 4px rgba(0, 0, 0, 0.08)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+      },
+    },
+  },
+  plugins: [],
+}

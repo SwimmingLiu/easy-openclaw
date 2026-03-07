@@ -1,0 +1,34 @@
+{
+  "name": "easy-openclaw",
+  "version": "0.1.0",
+  "description": "Easy OpenClaw - One-click installation and configuration for OpenClaw",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "tsx watch backend/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node --loader tsx/esm backend/server.ts",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint backend/ shared/ --ext .ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.0",
+    "@fastify/sensible": "^6.0.0",
+    "fastify": "^5.0.0",
+    "pino": "^9.0.0",
+    "pino-pretty": "^11.0.0",
+    "semver": "^7.6.0",
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/semver": "^7.5.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0"
+  }
+}

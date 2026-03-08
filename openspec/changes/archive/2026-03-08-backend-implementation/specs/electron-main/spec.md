@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Electron application shell
-The Electron main process hosts the Fastify backend and renders the frontend UI in a desktop window.
+The Electron main process SHALL host the Fastify backend and render the frontend UI in a desktop window.
 
 #### Scenario: Application startup
 - **WHEN** the Electron app launches

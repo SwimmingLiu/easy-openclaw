@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: npm command execution
-Provides typed wrappers around npm CLI commands, used by `InstallerService` to install packages and check npm configuration.
+The system SHALL provide typed wrappers around npm CLI commands, used by `InstallerService` to install packages and check npm configuration.
 
 #### Scenario: Install a global package
 - **WHEN** `npmInstall(pkg, { global: true })` is called

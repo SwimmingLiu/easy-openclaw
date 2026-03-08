@@ -9,6 +9,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 // Layout
 import { AppLayout } from '@/components/layout/AppLayout'
 
+// Common
+import { ErrorBoundary } from '@/components/common/ErrorBoundary'
+
 // Pages
 import Welcome from '@/pages/Welcome'
 import Install from '@/pages/Install'
@@ -136,13 +139,15 @@ const AnimatedRoutes: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <RouteGuard>
-          <AnimatedRoutes />
-        </RouteGuard>
-      </BrowserRouter>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <RouteGuard>
+            <AnimatedRoutes />
+          </RouteGuard>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </ErrorBoundary>
   )
 }
 

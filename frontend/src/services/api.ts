@@ -2,6 +2,7 @@
 // API client wrapper - uses Electron IPC for communication
 
 import type { ApiResponse, ApiError } from '@shared/types'
+import { getTraceIdHeader, setTraceId } from '../lib/logger'
 
 const API_BASE_URL = '/api'
 
@@ -20,7 +21,7 @@ export class ApiClientError extends Error {
 }
 
 /**
- * Generic fetch wrapper with error handling
+ * Generic fetch wrapper with error handling and trace ID support
  */
 export async function apiFetch<T>(
   endpoint: string,
@@ -31,10 +32,17 @@ export async function apiFetch<T>(
   const response = await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
+      ...getTraceIdHeader(),
       ...options?.headers,
     },
     ...options,
   })
+
+  // Update trace ID from backend response
+  const backendTraceId = response.headers.get('x-trace-id')
+  if (backendTraceId) {
+    setTraceId(backendTraceId)
+  }
 
   const data: ApiResponse<T> = await response.json()
 

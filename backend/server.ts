@@ -11,6 +11,8 @@ import { installRoutes } from './routes/install.js';
 import { modelRoutes } from './routes/models.js';
 import { channelRoutes } from './routes/channels.js';
 import { gatewayRoutes } from './routes/gateway.js';
+import { logRoutes } from './routes/logs.js';
+import { requestTracingMiddleware, responseTimeHook } from './middleware/request-tracing.js';
 
 const PORT = parseInt(process.env['EASY_OPENCLAW_PORT'] ?? '18790', 10);
 const HOST = process.env['EASY_OPENCLAW_HOST'] ?? '127.0.0.1';
@@ -23,6 +25,12 @@ export async function buildApp() {
     loggerInstance: logger,
     disableRequestLogging: process.env['NODE_ENV'] === 'production',
   });
+
+  // ==================== Middleware ====================
+
+  // Request tracing - add traceId to every request
+  app.addHook('onRequest', requestTracingMiddleware);
+  app.addHook('onRequest', responseTimeHook);
 
   // ==================== Plugins ====================
 
@@ -140,6 +148,7 @@ export async function buildApp() {
   await app.register(modelRoutes, { prefix: '/api/models' });
   await app.register(channelRoutes, { prefix: '/api/channels' });
   await app.register(gatewayRoutes, { prefix: '/api/gateway' });
+  await app.register(logRoutes);
 
   return app;
 }
